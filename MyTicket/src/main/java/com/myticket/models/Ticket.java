@@ -1,13 +1,13 @@
 package com.myticket.models;
 
-import java.util.List;
+import java.util.Set;
 
 import com.myticket.models.movies.Movie;
 
 public class Ticket {
 
 	private Movie movie;
-	private List<String> seatNumbers;
+	private Set<String> seatNumbers;
 	private long price;
 
 	public Movie getMovie() {
@@ -18,11 +18,11 @@ public class Ticket {
 		this.movie = movie;
 	}
 
-	public List<String> getSeatNumbers() {
+	public Set<String> getSeatNumbers() {
 		return seatNumbers;
 	}
 
-	public void setSeatNumber(List<String> seatNumbers) {
+	public void setSeatNumber(Set<String> seatNumbers) {
 		this.seatNumbers = seatNumbers;
 	}
 
