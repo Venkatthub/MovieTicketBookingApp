@@ -6,8 +6,8 @@ import com.google.appengine.api.datastore.Entity;
 
 public class UserRepository {
 
-	Entity user;
-	DatastoreService store = DatastoreServiceFactory.getDatastoreService();
+	private Entity user;
+	private static final DatastoreService DATASTORE = DatastoreServiceFactory.getDatastoreService();
 
 	public void addUser(String userName, String userMail, String password) {
 
@@ -19,7 +19,7 @@ public class UserRepository {
 
 		user.setProperty("password", password);
 
-		store.put(user);
+		DATASTORE.put(user);
 
 	}
 
