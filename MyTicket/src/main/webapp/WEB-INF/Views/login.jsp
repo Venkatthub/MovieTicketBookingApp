@@ -72,7 +72,7 @@ p {
 
 			<h3>${message}</h3>
 
-			<form action="/home">
+			<form action="/users" method="post">
 				<table>
 					<tr>
 						<td><input

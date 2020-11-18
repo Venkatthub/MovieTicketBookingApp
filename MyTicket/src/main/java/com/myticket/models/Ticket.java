@@ -2,21 +2,14 @@ package com.myticket.models;
 
 import java.util.Set;
 
-import com.myticket.models.movies.Movie;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Ticket {
 
-	private Movie movie;
+	private String movieName;
 	private Set<String> seatNumbers;
 	private long price;
-
-	public Movie getMovie() {
-		return movie;
-	}
-
-	public void setMovie(Movie movie) {
-		this.movie = movie;
-	}
 
 	public Set<String> getSeatNumbers() {
 		return seatNumbers;

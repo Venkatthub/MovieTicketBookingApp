@@ -15,7 +15,8 @@ import com.myticket.interceptors.SignUpCheckInterceptor;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "com.myticket.controllers", "com.myticket.interceptors" })
+@ComponentScan(basePackages = { "com.myticket.controllers", "com.myticket.interceptors", "com.myticket.database",
+		"com.myticket.service" })
 public class DispatcherServletConfiguration implements WebMvcConfigurer {
 
 	@Bean
@@ -31,7 +32,7 @@ public class DispatcherServletConfiguration implements WebMvcConfigurer {
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 
-		registry.addInterceptor(new LoginCheckInterceptor()).addPathPatterns("/home");
+		registry.addInterceptor(new LoginCheckInterceptor()).addPathPatterns("/users");
 		registry.addInterceptor(new SignUpCheckInterceptor()).addPathPatterns("/sign-up/user");
 
 	}

@@ -2,6 +2,9 @@ package com.myticket.models;
 
 import java.util.Set;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class UserProfile {
 
 	private String userName;
