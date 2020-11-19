@@ -1,10 +1,11 @@
 package com.myticket.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
+import com.google.appengine.api.datastore.EntityNotFoundException;
 import com.myticket.database.UserRepository;
 import com.myticket.models.UserProfile;
 
@@ -34,7 +35,9 @@ public class UserService {
 		return userRepository.checkEmailAlreadyExists(mailId);
 	}
 
-	public void fetchUser(String userMailId) {
+	public List<UserProfile> getUserDetails(String userEmail) {
+
+		return userRepository.getUserDetails(userEmail);
 
 	}
 

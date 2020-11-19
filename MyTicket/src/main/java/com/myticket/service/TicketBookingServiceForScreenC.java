@@ -4,48 +4,57 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
-import com.myticket.models.movies.ScreenA;
-import com.myticket.models.movies.ShowMovie;
+import com.myticket.database.UserRepository;
+import com.myticket.models.Ticket;
+import com.myticket.models.movies.ScreenC;
 
-@Service
-public class TicketBookingServiceForScreenC {
+@Service("screen3")
+public class TicketBookingServiceForScreenC implements TicketBookingService {
 
-	private ScreenA screenA;
+	private ScreenC screenC;
+	private Ticket ticket;
+
 	@Autowired
-	private Set<String> bookTickets;
+	private UserRepository database;
 
 	@Autowired
 	@Lazy
-	public TicketBookingServiceForScreenA(ScreenA screenA) {
+	public TicketBookingServiceForScreenC(ScreenC screenC, Ticket ticket) {
 
-		this.screenA = screenA;
+		this.screenC = screenC;
+		this.ticket = ticket;
 
 	}
 
+	@Override
 	public List<String> getAvailableSeats() {
 
-		return screenA.ticketsAvailable();
+		return screenC.ticketsAvailable();
 	}
 
-	public void bookTickets() {
-
-		screenA.bookTicket(bookTickets);
-		bookTickets.clear();
-
-	}
-
+	@Override
 	public void cancelTicket(String seatNumber) {
 
-		screenA.cancelTicket(seatNumber);
+		screenC.cancelTicket(seatNumber);
 
 	}
 
-	public void setTicketsForBooking(Set<String> tickets) {
+	@Override
+	public void setTicketsForBooking(Set<String> ticketsToBook, String mailId) {
 
-		this.bookTickets = tickets;
+		screenC.bookTicket(ticketsToBook);
+
+		ticket.setMovieName(screenC.getMovieName());
+
+		ticket.setSeatNumber(ticketsToBook);
+
+		ticket.setTotalCost(ticketsToBook.size());
+
+		database.putTicket(mailId, ticket.getSeatNumbers().toString(), ticket.getTotalCost(), screenC.getMovieName(),
+				"Screen - C");
 	}
+
 }

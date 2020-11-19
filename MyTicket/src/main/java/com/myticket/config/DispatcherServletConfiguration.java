@@ -16,7 +16,7 @@ import com.myticket.interceptors.SignUpCheckInterceptor;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = { "com.myticket.controllers", "com.myticket.interceptors", "com.myticket.database",
-		"com.myticket.service" })
+		"com.myticket.service", "com.myticket.controllers.ticketbooking" })
 public class DispatcherServletConfiguration implements WebMvcConfigurer {
 
 	@Bean

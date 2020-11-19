@@ -1,4 +1,4 @@
-package com.myticket.controllers;
+package com.myticket.controllers.ticketbooking;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;

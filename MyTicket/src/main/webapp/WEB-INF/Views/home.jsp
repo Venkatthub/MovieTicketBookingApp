@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 <meta charset="ISO-8859-1">
-<title>myTicket - Home</title>
+<title>myTicket - Home - ${user}</title>
 </head>
 <body>
 

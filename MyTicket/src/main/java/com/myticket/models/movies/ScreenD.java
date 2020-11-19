@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 import com.myticket.models.Seats;
 
-@Component("screen4")
-public class ScreenD implements ShowMovie {
+@Component
+public class ScreenD {
 
 	private Seats seats;
 
@@ -33,13 +33,6 @@ public class ScreenD implements ShowMovie {
 	public void cancelTicket(String seatsToCancel) {
 
 		seats.cancelSeat(seatsToCancel);
-	}
-
-	@Override
-	public String show() {
-
-		return "Movie :" + movieName + " Avalilabe seats :" + seats.getAvaliableSeats();
-
 	}
 
 	public void bookTicket(Set<String> seatNumbers) {

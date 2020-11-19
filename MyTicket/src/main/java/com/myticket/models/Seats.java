@@ -25,7 +25,7 @@ public class Seats {
 
 	public void defineSeats() {
 
-		var rowIdentifier = 'A';
+		char rowIdentifier = 'A';
 
 		for (int i = 1; i <= ROW_COUNT; i++) {
 
@@ -53,16 +53,9 @@ public class Seats {
 
 	}
 
-	public boolean cancelSeat(String seat) {
+	public void cancelSeat(String seat) {
 
-		if (!seats.get(seat)) {
-
-			seats.put(seat, true);
-
-			return true;
-		}
-
-		return false;
+		seats.put(seat, true);
 
 	}
 

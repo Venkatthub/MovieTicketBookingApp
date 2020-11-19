@@ -20,7 +20,8 @@ public class RootConfiguration {
 
 	@Bean
 	public Set<String> getSet() {
-		return new HashSet<String>();
+		return new HashSet<>();
 	}
+	
 
 }

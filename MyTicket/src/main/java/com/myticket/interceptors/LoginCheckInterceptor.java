@@ -30,9 +30,13 @@ public class LoginCheckInterceptor extends HandlerInterceptorAdapter {
 
 			Cookie userNameCookie = new Cookie("User", userName);
 
-			userNameCookie.setMaxAge(60 * 60 * 24);
+			Cookie userEmailCookie = new Cookie("email", email);
+
+			userNameCookie.setMaxAge(60 * 60);
+			userEmailCookie.setMaxAge(60 * 60);
 
 			response.addCookie(userNameCookie);
+			response.addCookie(userEmailCookie);
 
 			session.setAttribute("userName", userName);
 

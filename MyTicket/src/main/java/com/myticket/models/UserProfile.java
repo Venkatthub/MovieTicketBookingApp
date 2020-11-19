@@ -1,6 +1,7 @@
 package com.myticket.models;
 
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.stereotype.Component;
 
@@ -11,13 +12,13 @@ public class UserProfile {
 	private String userMail;
 	private String password;
 
-	private Set<Ticket> bookedTickets;
+	private List<String[]> bookedTickets = new ArrayList<>();
 
-	public Set<Ticket> getTicketsBooked() {
+	public List<String[]> getBookedTickets() {
 		return bookedTickets;
 	}
 
-	public void setTicketsBooked(Set<Ticket> bookedTickets) {
+	public void setBookedTickets(List<String[]> bookedTickets) {
 		this.bookedTickets = bookedTickets;
 	}
 
