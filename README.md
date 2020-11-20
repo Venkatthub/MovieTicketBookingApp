@@ -7,6 +7,3 @@ GET http://localhost:8080/my-ticket/movies/{moviename}/{screenname}/available-se
 
 To get details of the user booked tickets
 GET http://localhost:8080/my-ticket/users/{userEmail}/tickets
-
-To book a ticket for a movie
-POST http://localhost:8080/my-ticket/confirm-booking/{movieName}/{screenname}
