@@ -41,7 +41,7 @@ function setMovie(movie) {
 	let movieName = movie.name;
 	let screenName = movie.screen;
 
-	let url = new URL("http://localhost:8080");
+	let url = new URL("http://localhost:8080/");
 
 	if (screenName === 'screen-a') {
 

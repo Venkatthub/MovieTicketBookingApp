@@ -17,6 +17,8 @@ public class TicketBookingPageController {
 		model.addAttribute("movie", movieName);
 		model.addAttribute("user", userName);
 
+		System.out.println(movieName);
+
 		return "forward:/booking";
 
 	}
