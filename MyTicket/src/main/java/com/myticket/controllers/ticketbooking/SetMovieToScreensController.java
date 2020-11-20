@@ -20,7 +20,6 @@ public class SetMovieToScreensController {
 	public void assignMovieToScreenA(@RequestBody String movieName, Model model) {
 
 		ScreenA.movieName = movieName;
-		System.out.println(movieName);
 
 	}
 
@@ -29,7 +28,6 @@ public class SetMovieToScreensController {
 	public void assignMovieToScreenB(@RequestBody String movieName, Model model) {
 
 		ScreenB.movieName = movieName;
-		System.out.println(movieName);
 
 	}
 
@@ -38,7 +36,6 @@ public class SetMovieToScreensController {
 	public void assignMovieToScreenC(@RequestBody String movieName, Model model) {
 
 		ScreenC.movieName = movieName;
-		System.out.println(movieName);
 	}
 
 	@RequestMapping(value = "/movies/screen-d", method = RequestMethod.POST)
@@ -46,7 +43,6 @@ public class SetMovieToScreensController {
 	public void assignMovieToScreenD(@RequestBody String movieName, Model model) {
 
 		ScreenD.movieName = movieName;
-		System.out.println(movieName);
 
 	}
 

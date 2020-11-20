@@ -11,12 +11,13 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 import com.myticket.interceptors.LoginCheckInterceptor;
+import com.myticket.interceptors.SessionValidatingInterceptor;
 import com.myticket.interceptors.SignUpCheckInterceptor;
 
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = { "com.myticket.controllers", "com.myticket.interceptors", "com.myticket.database",
-		"com.myticket.service", "com.myticket.controllers.ticketbooking" })
+		"com.myticket.service" })
 public class DispatcherServletConfiguration implements WebMvcConfigurer {
 
 	@Bean
@@ -34,6 +35,9 @@ public class DispatcherServletConfiguration implements WebMvcConfigurer {
 
 		registry.addInterceptor(new LoginCheckInterceptor()).addPathPatterns("/users");
 		registry.addInterceptor(new SignUpCheckInterceptor()).addPathPatterns("/sign-up/user");
+		registry.addInterceptor(new SessionValidatingInterceptor()).excludePathPatterns("/", "/login", "/signup",
+				"/sign-up/user", "/logout", "/my-ticket/confirm-booking/{movieName}/{screen}",
+				"/my-ticket/users/{userEmail}/tickets", "/my-ticket/movies/{movieName}/{screen}/available-seats");
 
 	}
 

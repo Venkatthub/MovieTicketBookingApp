@@ -9,14 +9,16 @@ import org.springframework.web.bind.annotation.RestController;
 import com.myticket.service.UserService;
 
 @RestController
-@RequestMapping("/my-ticket/users/")
-public class DisplayUsersController {
+@RequestMapping("/my-ticket/users/{userEmail}/tickets")
+public class DisplayUserTicketController {
 
 	@Autowired
 	UserService userService;
 
-	@GetMapping(value = "/{userEmail}", produces = "application/json")
-	public void getUserDetails(@PathVariable String userEmail) {
+	@GetMapping(produces = "application/json")
+	public String getUserTicketDetails(@PathVariable String userEmail) {
+
+		return userService.getTicketDetails(userEmail);
 
 	}
 

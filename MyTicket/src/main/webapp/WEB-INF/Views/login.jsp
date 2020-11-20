@@ -70,7 +70,8 @@ p {
 
 			<p>myTicket</p>
 
-			<h3>${message}</h3>
+			<h3
+				style="font-family: cursive; color: green; font-style: oblique; font-weight: lighter;">${message}</h3>
 
 			<form action="/users" method="post">
 				<table>
@@ -87,8 +88,15 @@ p {
 							placeholder="Password" /></td>
 					</tr>
 					<tr>
-						<td><input style="background-color: transparent;"
+						<td><input
+							style="background-color: #34495E; color: whitesmoke; border-radius: 10%; padding: 8px;"
 							type="submit" value="login" /></td>
+					</tr>
+					<tr>
+						<td
+							style="font-size: large; font-family: Lucida Sans ', ' Lucida Sans Regular ', ' Lucida Grande ', ' Lucida Sans Unicode ', Geneva, Verdana, sans-serif;"
+							colspan="2">Don't have an account? <a href="/signup">Sign
+								up</a></td>
 					</tr>
 				</table>
 			</form>

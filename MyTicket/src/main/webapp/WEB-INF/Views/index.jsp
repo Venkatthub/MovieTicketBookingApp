@@ -8,36 +8,37 @@
 <style>
 p {
 	top: 0;
-	margin: -2px;
+	margin: -8px;
 	text-align: center;
 	font-size: 100px;
 	font-family: cursive;
-	color: darkblue;
+	color: whitesmoke;
+	background-color: #163A5F;
 }
 
 .container {
 	height: 100%;
 	width: 50%;
 	position: fixed;
-	top: 22%;
-	padding-top: 20%;
+	top: 19%;
+	padding-top: 0%;
 }
 
 .left {
 	left: 0;
-	background-color: teal;
-	align-content: center;
+	background-image: url("images/left.jpg");
+	background-size: 770px;
 }
 
 .right {
 	right: 0;
-	background-color: goldenrod;
-	align-content: center;
+	background-image: url("images/right.jpg");
+	background-size: 700px;
 }
 
 .centered {
 	position: absolute;
-	top: 20%;
+	top: 40%;
 	left: 40%;
 	transform: translate(-30%, -30%);
 	text-align: center;
@@ -45,13 +46,21 @@ p {
 
 button {
 	text-align: center;
-	background-color: black;
+	background-color: #34495E;
 	padding: 50px;
 	border: 0ch;
 	color: aliceblue;
 	font-size: x-large;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
 		sans-serif;
+	margin-top: 250px;
+}
+
+button:hover {
+	cursor: pointer;
+	box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 </style>
 </head>

@@ -39,21 +39,4 @@ public class Ticket {
 		this.totalCost = TICKET_PRICE * seatCount;
 	}
 
-//	@Override
-//	public String toString() {
-//
-//		StringBuilder seats = new StringBuilder();
-//
-//		if (seatNumbers != null) {
-//
-//			for (String seat : this.seatNumbers) {
-//
-//				seats.append(seat + " ");
-//
-//			}
-//
-//		}
-//		return seats.toString();
-//	}
-
 }

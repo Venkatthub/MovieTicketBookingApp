@@ -12,13 +12,13 @@ import com.myticket.models.UserProfile;
 import com.myticket.service.UserService;
 
 @Controller
-@RequestMapping("/sign-up/user")
+@RequestMapping
 public class SignUpController {
 
 	@Autowired
 	private UserService userService;
 
-	@PostMapping
+	@PostMapping("/sign-up/user")
 	public RedirectView signUp(@ModelAttribute UserProfile user, RedirectAttributes model) {
 
 		userService.createUser(user);

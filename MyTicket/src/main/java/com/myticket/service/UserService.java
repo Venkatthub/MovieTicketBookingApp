@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.google.appengine.api.datastore.EntityNotFoundException;
 import com.myticket.database.UserRepository;
 import com.myticket.models.UserProfile;
 
@@ -17,7 +15,6 @@ public class UserService {
 	@Autowired
 	public UserService(UserRepository userRepository) {
 
-		System.out.println("Constructor injection");
 		this.userRepository = userRepository;
 
 	}
@@ -30,14 +27,24 @@ public class UserService {
 
 	public boolean checkEmailAlreadyRegistered(String mailId) {
 
-		System.out.println(userRepository);
-
 		return userRepository.checkEmailAlreadyExists(mailId);
 	}
 
 	public List<UserProfile> getUserDetails(String userEmail) {
 
 		return userRepository.getUserDetails(userEmail);
+
+	}
+
+	public String getTicketDetails(String userEmail) {
+
+		return userRepository.getUserTicketDetails(userEmail);
+
+	}
+
+	public String getUserPassword(String userEmail) {
+
+		return userRepository.retriveUserPassword(userEmail);
 
 	}
 

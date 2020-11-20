@@ -49,8 +49,6 @@ public class BookTicketController {
 
 		serviceB.setTicketsForBooking(ticketsToBook, email);
 
-		System.out.println(ticketsToBook);
-
 		return "Ticket Booked";
 
 	}

@@ -16,7 +16,7 @@ import org.springframework.web.servlet.view.RedirectView;
 public class HomeController {
 
 	@PostMapping("/users")
-	public RedirectView homePage(@SessionAttribute String userName, @RequestParam String userEmail,
+	public RedirectView redirectToHomePage(@SessionAttribute String userName, @RequestParam String userEmail,
 			RedirectAttributes object) {
 
 		object.addFlashAttribute("emailId", userEmail);
@@ -25,14 +25,14 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/home/{userName}")
-	public String getHomePage(@PathVariable String userName, @ModelAttribute String emailId) {
+	public String goToHomePage() {
 
 		return "forward:/home";
 
 	}
 
 	@RequestMapping("/home")
-	public String getHome(Model model, @CookieValue String email) {
+	public String getHomePage(Model model, @CookieValue String email) {
 
 		model.addAttribute("user", email);
 		return "home";

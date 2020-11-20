@@ -25,13 +25,21 @@ img {
 	right: 150px;
 	position: fixed;
 }
+
+.headerButton {
+	background-color: whitesmoke;
+	border: 0px;
+	font-weight: bold;
+	color: #34495E;
+	padding: 8px;
+}
 </style>
 </head>
 <body>
 	<header>
-		myTicket <span style="margin-left: 1100px"><a href=""><button
-					style="padding: 5px; border: 0px;">Profile</button> </a><a href=""><button
-					style="padding: 5px; border: 0px;">Logout</button></a></span>
+		myTicket <span style="margin-left: 1100px"><a
+			href="/my-ticket/user-profile"><button class="headerButton">Profile</button>
+		</a><a href="/logout"><button class="headerButton">Logout</button></a></span>
 	</header>
 </body>
 </html>

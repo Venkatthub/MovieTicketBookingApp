@@ -61,10 +61,7 @@ public class Seats {
 
 	public List<String> getAvaliableSeats() {
 
-		List<String> availableSeats = seats.keySet().stream().filter(s -> seats.get(s) == true)
-				.collect(Collectors.toList());
-
-		return availableSeats;
+		return seats.keySet().stream().filter(s -> this.seats.get(s) == true).collect(Collectors.toList());
 
 	}
 }

@@ -15,7 +15,7 @@ import com.myticket.models.movies.ScreenB;
 public class TicketBookingServiceForScreenB implements TicketBookingService {
 
 	private ScreenB screenB;
-	
+
 	@Autowired
 	private Ticket ticket;
 
@@ -23,7 +23,6 @@ public class TicketBookingServiceForScreenB implements TicketBookingService {
 	private UserRepository database;
 
 	@Autowired
-	@Lazy
 	public TicketBookingServiceForScreenB(ScreenB screenB) {
 
 		this.screenB = screenB;

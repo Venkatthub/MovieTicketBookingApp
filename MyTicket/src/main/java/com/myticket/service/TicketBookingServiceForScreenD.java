@@ -15,6 +15,8 @@ import com.myticket.models.movies.ScreenD;
 public class TicketBookingServiceForScreenD implements TicketBookingService {
 
 	private ScreenD screenD;
+
+	@Autowired
 	private Ticket ticket;
 
 	@Autowired
@@ -22,10 +24,9 @@ public class TicketBookingServiceForScreenD implements TicketBookingService {
 
 	@Autowired
 	@Lazy
-	public TicketBookingServiceForScreenD(ScreenD screenD, Ticket ticket) {
+	public TicketBookingServiceForScreenD(ScreenD screenD) {
 
 		this.screenD = screenD;
-		this.ticket = ticket;
 
 	}
 
@@ -53,7 +54,7 @@ public class TicketBookingServiceForScreenD implements TicketBookingService {
 
 		ticket.setTotalCost(ticketsToBook.size());
 
-		database.putTicket(mailId, ticket.getSeatNumbers().toString(), ticket.getTotalCost(), screenD.getMovieName(),
+		database.putTicket(mailId, ticketsToBook.toString(), ticket.getTotalCost(), ticket.getMovieName(),
 				"Screen - D");
 	}
 

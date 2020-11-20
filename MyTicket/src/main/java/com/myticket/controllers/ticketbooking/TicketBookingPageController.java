@@ -24,9 +24,7 @@ public class TicketBookingPageController {
 	@RequestMapping("/booking")
 	public ModelAndView getBookingPage() {
 
-		ModelAndView model = new ModelAndView("bookingPage");
-
-		return model;
+		return new ModelAndView("bookingPage");
 
 	}
 

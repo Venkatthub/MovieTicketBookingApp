@@ -26,7 +26,7 @@ public class WelcomeController {
 
 	}
 
-	@RequestMapping("/sign-up")
+	@RequestMapping("/signup")
 	public String signupPage() {
 
 		return "signup";

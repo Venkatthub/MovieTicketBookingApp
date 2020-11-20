@@ -11,10 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class BookingController {
 
 	@GetMapping
-	public String setPathMapping(@RequestParam String screen, @CookieValue("User") String userName) {
-
-		System.out.println(userName);
-		System.out.println(screen);
+	public String setPathMapping(@RequestParam String screen, @CookieValue("user") String userName) {
 
 		return "redirect:/movies/" + screen + "/" + userName + "/book";
 	}

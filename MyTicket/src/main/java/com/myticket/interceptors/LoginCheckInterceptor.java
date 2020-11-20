@@ -5,12 +5,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.myticket.database.UserRepository;
 
-@Component
 public class LoginCheckInterceptor extends HandlerInterceptorAdapter {
 
 	private UserRepository userRepository = new UserRepository();
@@ -20,6 +18,7 @@ public class LoginCheckInterceptor extends HandlerInterceptorAdapter {
 			throws Exception {
 
 		String email = request.getParameter("userEmail");
+
 		String password = request.getParameter("userPassword");
 
 		if (userRepository.validateCredentials(email, password)) {
@@ -28,14 +27,16 @@ public class LoginCheckInterceptor extends HandlerInterceptorAdapter {
 
 			HttpSession session = request.getSession();
 
-			Cookie userNameCookie = new Cookie("User", userName);
+			Cookie userNameCookie = new Cookie("user", userName);
 
 			Cookie userEmailCookie = new Cookie("email", email);
 
 			userNameCookie.setMaxAge(60 * 60);
+
 			userEmailCookie.setMaxAge(60 * 60);
 
 			response.addCookie(userNameCookie);
+
 			response.addCookie(userEmailCookie);
 
 			session.setAttribute("userName", userName);
