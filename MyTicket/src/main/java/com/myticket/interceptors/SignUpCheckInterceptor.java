@@ -27,7 +27,7 @@ public class SignUpCheckInterceptor extends HandlerInterceptorAdapter {
 
 			response.getWriter().print("Mail id already registered");
 
-			response.getWriter().print("<a href=\"/sign-up\">Back</a>");
+			response.getWriter().print("<a href=\"/signup\">Back</a>");
 
 			response.setStatus(209);
 

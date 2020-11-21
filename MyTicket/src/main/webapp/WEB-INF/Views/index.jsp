@@ -79,7 +79,7 @@ button:hover {
 
 		<div class="centered">
 
-			<a href="/sign-up"><button id="sign-up">New User</button></a>
+			<a href="/signup"><button id="sign-up">New User</button></a>
 
 		</div>
 

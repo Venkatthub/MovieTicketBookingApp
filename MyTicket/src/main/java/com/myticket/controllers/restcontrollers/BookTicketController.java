@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,40 +35,40 @@ public class BookTicketController {
 	@Qualifier("screen4")
 	private TicketBookingService serviceD;
 
-	@PostMapping(value = "/{movieName}/screen-a", consumes = "application/json")
+	@PostMapping(value = "/{emailId}/{movieName}/screen-a", consumes = "application/json")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public String bookSeatInA(@RequestBody Set<String> ticketsToBook, @CookieValue String email) {
+	public String bookSeatInA(@RequestBody Set<String> ticketsToBook, @PathVariable String emailId) {
 
-		serviceA.setTicketsForBooking(ticketsToBook, email);
+		serviceA.setTicketsForBooking(ticketsToBook, emailId);
 
 		return "Ticket Booked";
 	}
 
-	@PostMapping(value = "/{movieName}/screen-b", consumes = "application/json")
+	@PostMapping(value = "/{emailId}/{movieName}/screen-b", consumes = "application/json")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public String bookSeatInB(@RequestBody Set<String> ticketsToBook, @CookieValue String email) {
+	public String bookSeatInB(@RequestBody Set<String> ticketsToBook, @PathVariable String emailId) {
 
-		serviceB.setTicketsForBooking(ticketsToBook, email);
-
-		return "Ticket Booked";
-
-	}
-
-	@PostMapping(value = "/{movieName}/screen-c", consumes = "application/json")
-	@ResponseStatus(code = HttpStatus.CREATED)
-	public String bookSeatInC(@RequestBody Set<String> ticketsToBook, @CookieValue String email) {
-
-		serviceC.setTicketsForBooking(ticketsToBook, email);
+		serviceB.setTicketsForBooking(ticketsToBook, emailId);
 
 		return "Ticket Booked";
 
 	}
 
-	@PostMapping(value = "/{movieName}/screen-d", consumes = "application/json")
+	@PostMapping(value = "/{emailId}/{movieName}/screen-c", consumes = "application/json")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public String bookSeatInD(@RequestBody Set<String> ticketsToBook, @CookieValue String email) {
+	public String bookSeatInC(@RequestBody Set<String> ticketsToBook, @PathVariable String emailId) {
 
-		serviceD.setTicketsForBooking(ticketsToBook, email);
+		serviceC.setTicketsForBooking(ticketsToBook, emailId);
+
+		return "Ticket Booked";
+
+	}
+
+	@PostMapping(value = "/{emailId}/{movieName}/screen-d", consumes = "application/json")
+	@ResponseStatus(code = HttpStatus.CREATED)
+	public String bookSeatInD(@RequestBody Set<String> ticketsToBook, @PathVariable String emailId) {
+
+		serviceD.setTicketsForBooking(ticketsToBook, emailId);
 
 		return "Ticket Booked";
 

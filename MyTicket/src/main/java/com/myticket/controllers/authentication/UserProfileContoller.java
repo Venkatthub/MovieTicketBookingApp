@@ -2,31 +2,28 @@ package com.myticket.controllers.authentication;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 import com.myticket.service.UserService;
 
 @Controller
+@RequestMapping("/profile")
 public class UserProfileContoller {
 
 	@Autowired
 	private UserService userService;
 
-	@RequestMapping("/my-ticket/user-profile")
-	public String goToUserProfilePage() {
+	@GetMapping
+	public ModelAndView getUserProfilePage(@CookieValue String user, @CookieValue String email) {
 
-		return "forward:/userProfile";
-	}
+		ModelAndView model = new ModelAndView("/profile");
+		model.addObject("password", userService.getUserPassword(email));
+		model.addObject("userName", user);
+		model.addObject("userEmail", email);
 
-	@RequestMapping("/userProfile")
-	public String getUserProfilePage(Model model, @CookieValue String user, @CookieValue String email) {
-
-		model.addAttribute("password", userService.getUserPassword(email));
-		model.addAttribute("userName", user);
-		model.addAttribute("userEmail", email);
-
-		return "/userProfile";
+		return model;
 
 	}
 

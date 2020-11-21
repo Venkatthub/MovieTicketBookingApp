@@ -5,4 +5,4 @@ project.bucket=
 project.id=month-2
 project.previousVersion.stop=true
 project.promote=true
-project.version=3
+project.version=

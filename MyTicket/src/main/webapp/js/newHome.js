@@ -1,6 +1,7 @@
 /**
  * 
  */
+const urls = ["http://localhost:8080/", "https://month-2.el.r.appspot.com/", "https://month-2.appspot.com/"];
 
 let myData = JSON.parse(`[
             {
@@ -41,28 +42,28 @@ function setMovie(movie) {
 	let movieName = movie.name;
 	let screenName = movie.screen;
 
-	let url = new URL("http://localhost:8080/");
+	let urlSearch = new URL(urls[2]);
 
 	if (screenName === 'screen-a') {
 
-		url.pathname = `/movies/screen-a`;
+		urlSearch.pathname = `/movies/screen-a`;
 
 	} else if (screenName === 'screen-b') {
 
-		url.pathname = `/movies/screen-b`;
+		urlSearch.pathname = `/movies/screen-b`;
 
 	} else if (screenName === 'screen-c') {
 
-		url.pathname = `/movies/screen-c`;
+		urlSearch.pathname = `/movies/screen-c`;
 
 	} else if (screenName === 'screen-d') {
 
-		url.pathname = `/movies/screen-d`;
+		urlSearch.pathname = `/movies/screen-d`;
 	}
 
-	console.log(url);
+	console.log(urls[2]);
 
-	fetch(url, {
+	fetch(urlSearch, {
 		method: 'POST',
 		body: movieName
 	}).then(Response => console.log(Response)).catch(error => console.log(error));

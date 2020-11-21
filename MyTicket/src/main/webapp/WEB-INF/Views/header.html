@@ -4,42 +4,31 @@
 <meta charset="ISO-8859-1">
 <title>Header Template</title>
 <style>
+body {
+	background-color: #ECF0F1;
+}
+
 header {
-	top: 0%;
+	top: -1%;
 	background-image: url("/images/home-page-image.gif");
+	background-size: cover;
+	background-repeat: inherit;
 	padding: 5%;
-	margin: -20px;
+	margin: -10px;
 	font-size: xx-large;
 	color: whitesmoke;
 	border-bottom: 5px solid #cfcfcf;
-	position: static;
-	width: 100%;
+	position: inherit;
+	width: inherit;
 	font-family: cursive;
-}
-
-img {
-	border-radius: 20%;
-	height: 100px;
-	position: fixed;
-	top: 50px;
-	right: 150px;
-	position: fixed;
-}
-
-.headerButton {
-	background-color: whitesmoke;
-	border: 0px;
-	font-weight: bold;
-	color: #34495E;
-	padding: 8px;
 }
 </style>
 </head>
 <body>
 	<header>
 		myTicket <span style="margin-left: 1100px"><a
-			href="/my-ticket/user-profile"><button class="headerButton">Profile</button>
-		</a><a href="/logout"><button class="headerButton">Logout</button></a></span>
+			style="color: whitesmoke; font-size: medium;" href="/profile">Profile</a>
+			<a style="color: whitesmoke; font-size: medium;" href="/logout">Logout</a></span>
 	</header>
 </body>
 </html>

@@ -9,9 +9,9 @@
 <body>
 	<%@ include file="/WEB-INF/Views/header.html"%>
 
+	<br>
 	<a href="/home/${userName}"><button>Back</button></a>
 	<br>
-
 	<div class="container right">
 		<br>
 		<p class="userDetails" id="userName">Name : ${userName}</p>
@@ -35,8 +35,10 @@
 </body>
 
 <script type="text/javascript">
+
+const urls=["http://localhost:8080/","https://month-2.el.r.appspot.com/","https://month-2.appspot.com/"];
 	
-const urlSearch=new URL("http://localhost:8080/");
+const urlSearch=new URL(urls[2]);
 	
 	function showTicketDetails() {
 		
