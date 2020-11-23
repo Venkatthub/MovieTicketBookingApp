@@ -18,7 +18,7 @@ public class UserProfileContoller {
 	@GetMapping
 	public ModelAndView getUserProfilePage(@CookieValue String user, @CookieValue String email) {
 
-		ModelAndView model = new ModelAndView("/profile");
+		ModelAndView model = new ModelAndView("profilePage");
 		model.addObject("password", userService.getUserPassword(email));
 		model.addObject("userName", user);
 		model.addObject("userEmail", email);
